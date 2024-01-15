@@ -7,21 +7,17 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  /* --first-color: hsl(14, 98%, 50%); */
-  --first-color: hsla(181, 100%, 50%, 0.777);
+  --primary-color: hsl(180, 4%, 10%);
+  --secondary-color: hsl(180, 6%, 7%);
+  --accent-color: hsla(181, 100%, 50%, 0.7);
   --black-color: hsl(0, 0%, 0%);
-  --black-color-light: hsl(0, 0%, 40%);
+  --black-color-light: hsl(0, 0%, 17%);
+  --dark-gray: hsl(180, 7%, 6%);
+  --gray-color: hsl(0, 0%, 40%);
   --white-color: hsl(0, 0%, 95%);
-  /* --title-color: hsl(0, 0%, 0%); */
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 35%);
   --text-color-light: hsl(0, 0%, 64%);
-  /* --body-color: hsl(54, 95%, 91%); */
-  /* --body-color: hsl(0, 0%, 17%); */
-  --body-color: #181a1a;
-  /* --body-color: #111313; */
-  /* --container-color: hsl(0, 0%, 83%); */
-  --container-color: hsl(232, 41%, 15%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -72,7 +68,7 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-color: var(--primary-color);
   color: var(--text-color);
   transition: background-color 0.4s;
 }
@@ -97,4 +93,76 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  /* max-width: 1120px; */
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 4rem 2rem;
+  overflow: hidden;
+}
+
+.section-title-1,
+.section-title-2 {
+  position: relative;
+  font-size: var(--h1-font-size);
+  width: max-content;
+  margin: 0.75rem auto 2rem;
+}
+
+.section-title-1 span,
+.section-title-2 span {
+  z-index: 5;
+  position: relative;
+}
+
+.section-title-1::after,
+.section-title-2::after {
+  content: "";
+  width: 40px;
+  height: 28px;
+  background-color: var(--accent-color);
+  position: absolute;
+  top: -3px;
+  right: -8px;
+  border-radius: 3px;
+  /* opacity: 0.6; */
+}
+
+.section-title-2::after {
+  top: initial;
+  bottom: -6px;
+}
+
+.circle-decoration {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  rotate: -30deg;
+  border-radius: 50px;
+}
+
+.circle-decoration::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--gray-color);
+  left: -7px;
+  top: 0px;
+  border-radius: 50px;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
 }
