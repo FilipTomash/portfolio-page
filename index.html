@@ -3,56 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Filip Tomashevski</title>
-    <link rel="stylesheet" href="main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
-      crossorigin=""
-    />
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+    <script src="app.js" defer></script>
     <script
       src="https://kit.fontawesome.com/d32ad62e17.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="app.js" />
-  </head>
+      <title>Portfolio - Filip Tomashevski</title>
+    </head>
   <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-      <nav class="nav">
+      <nav class="nav container">
         <div class="nav-menu" id="nav-menu">
+
+          <span class="nav-title">Menu</span>
+
           <ul class="nav-list">
+            
             <li class="nav-item">
               <a href="#home" class="nav-link active-link">Home</a>
             </li>
+
             <li class="nav-item">
               <a href="#about" class="nav-link">About</a>
             </li>
+
             <li class="nav-item">
               <a href="#skills" class="nav-link">Skills</a>
             </li>
+
             <li class="nav-item">
               <a href="#projects" class="nav-link">Projects</a>
             </li>
+
             <li class="nav-item">
               <a href="#contact" class="nav-link">Contact</a>
             </li>
           </ul>
+
           <div class="nav-close" id="nav-close">
             <i class="ri-close-line"></i>
           </div>
         </div>
+        
         <div class="nav-buttons">
-          <!-- Theme button -->
+            <!-- Theme button -->
 
-           <i class="ri-moon-line change-theme" id="theme-button"></i>
-
-          <!-- Toggle button -->
-          <div class="nav-toggle" id="nav-toggle">
-
-            <i class="ri-menu-line"></i>
-          
-          </div>
+             <i class="ri-moon-line change-theme " id="theme-button"></i>
+             
+            <!-- Toggle button -->
+            <div class="nav-toggle" id="nav-toggle">
+              <i class="ri-menu-line"></i>
+            </div>
         </div>
       </nav>
     </header>
@@ -63,7 +68,7 @@
         <div class="home-container container grid">
           <div class="home-heading">
             <h1 class="home-name"><small>Hi, I'm</small> Filip Tomashevski</h1>
-            <h3 class="home-title"><small>a junior</small> Software developer</h3>
+            <h3 class="home-title"><small>a junior</small> Software Developer</h3>
           </div>
           <div>
           </div>
@@ -71,9 +76,8 @@
             <div class="home-scroll-box">
                 <i class="ri-arrow-down-double-line"></i>
             </div>
-            
-            <span class="home-scroll-text">Scroll Down</span>
 
+            <span class="home-scroll-text">Scroll Down</span>
         </a>
         </div>
       </section>
@@ -100,15 +104,16 @@
           </div>
           <div class="about-profile">
             <div class="about-image">
-              <img src="assets/color-splash.png" alt="img" class="about-splash">
+              <img src="assets/color-splash-light.png" alt="img" class="color-splash">
               <img
-                src="assets/portfolio-image-filip.jpg"
+                src="assets/light-portfolio-img.jpg"
                 alt="image"
                 class="about-img"
               />
-              <div class="about-shadow"></div>
+              <!-- <div class="about-shadow"></div> -->
               <div class="circle-decoration"></div>
             </div>
+          </div>
         </div>
       </section>
       <div id="about-end"></div>
@@ -171,7 +176,6 @@
               <p class="skills-text">
                 Dedicated to building well structured and scalable server-side solutions, that serve as the backbone for creating effective web applications via TypeScript, Express and other.
               </p>
-              <br>
             </div>
               <div class="skills-set">
                 <p class="skills-heading">My Skill set:</p>
@@ -216,8 +220,7 @@
             <div class="skills-description">
               <h2 class="skills-title">Database Management</h2>
               <p class="skills-text">
-                In the domain of database management, I'm continuously learning and developing a strong foundation in navigating systems like 
-                PostgreSQL and MongoDB. My focus is on perfecting database design, data modeling, and efficiently querying data.
+                In the domain of database management, I'm continuously learning and developing a strong foundation in database design, data modeling, and efficiently querying data.
               </p>
             </div>
             <div class="skills-set">
@@ -248,114 +251,115 @@
       <div id="projects"></div>
       <!--==================== PROJECTS ====================-->
       <section class="projects section" id="projects">
-            <h2 class="section-title-1">
-              <span>Projects.</span>
-            </h2>
-    
-            <div class="projects-container container grid">
-              <article class="projects-card">
-                <div class="projects-image">
-                  <img
-                    src="assets/LocalBuzz.png"
-                    alt="local-buzz-image"
-                    class="projects-img"
-                  />
-    
-                  <a
-                    href="https://local-buzz.vercel.app"
-                    target="_blank"
-                    class="projects-button button"
-                    >
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-    
-                <div class="projects-content">
-                  <h3 class="projects-subtitle">Social App</h3>
-                  <h2 class="projects-title">Local Buzz</h2>
-                  <div class="projects-description">
-                    <p >
-                      Local Buzz is where communities unite!
-                      <br>This is a
-                    straightforward app, that enables users to create profiles and
-                    share local events which are not well advertised and might be
-                    under the radar.</p>
-                    <br>
-                    <p>
-                      <b>Specifications: </b>
-                      <br>
-                      From a technical standpoint, it's a MEAN stack project
-                      featuring stateless authentication and persistent login using
-                      JWT tokens.
-                    </p>
-                    <br>
-                    🌐✨ #FullStack #Angular
-                    #Express #MongoDB
-                  </div>
-                </div>
-    
-                <div class="projects-buttons">
-                  <a
-                  href="https://github.com/FilipTomash/portfolio-projects-deploy/tree/b71769880f9f8f55b74cb24a4adb54f0c0560c69/localBuzz"
-                  target="_blank"
-                    class="projects-link"
-                    >
-                    <i class="ri-github-line"></i> View
-                  </a>
-                </div>
-              </article>
-              <article class="projects-card">
-                <div class="projects-image">
-                  <img
-                  src="assets/Focus-hub.png"
-                  alt="focus-hub-image"
-                  class="projects-img"
-                  />
-    
-                  <a
-                    href="https://additional-focushub.vercel.app/"
-                    target="_blank"
-                    class="projects-button button"
-                  >
-                  <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-                
-                <div class="projects-content">
-                  <h3 class="projects-subtitle">Productivity App</h3>
-                  <h2 class="projects-title">Focus Hub</h2>
-                  <div class="projects-description">
-                    <p>          
-                    The purpose of FocusHub, as the name implies, is to concentrate on 
-                    identifying the sources and causes of problems—zeroing in on the core issues.
-                  </p>
-                  <br>
-                  <p>
-                    <b>Specifications:</b>
-                    <br>
-                    This app was built using NestJS as the back-end solution and 
-                    React.js for a seamless and intuitive front-end user experience.
-                  </p>
-                  <br>
-                  📈 🚀 #React #NestJS #PostgreSQL
-                </div>
-                </div>
-    
-                <div class="projects-buttons">
-                  <a
-                    href="https://github.com/pavich5/FitnessApp"
-                    target="_blank"
-                    class="projects-link"
-                  >
-                    <i class="ri-github-line"></i> View
-                  </a>
-                </div>
-              </article>
+        <h2 class="section-title-1">
+          <span>Projects.</span>
+        </h2>
+
+        <div class="projects-container container grid">
+          <article class="projects-card">
+            <div class="projects-image">
+              <img
+                src="assets/LocalBuzz.png"
+                alt="local-buzz-image"
+                class="projects-img"
+              />
+
+              <a
+                href="https://local-buzz.vercel.app"
+                target="_blank"
+                class="projects-button button"
+              >
+                <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-          </section>
-          <div id="projects-end"></div>
-          <div id="contact"></div>
-                <!--==================== CONTACT ====================-->
+
+            <div class="projects-content">
+              <h3 class="projects-subtitle">Social App</h3>
+              <h2 class="projects-title">Local Buzz</h2>
+              <div class="projects-description">
+              <p >
+                Local Buzz is where communities unite!
+                <br>This is a
+                straightforward app, that enables users to create profiles and
+                share local events which are not well advertised and might be
+                under the radar.</p>
+                <br>
+                <p>
+                  <b>Specifications: </b>
+                  <br>
+                  From a technical standpoint, it's a MEAN stack project
+                  featuring stateless authentication and persistent login using
+                  JWT tokens.
+                </p>
+                <br>
+                🌐✨ #FullStack #Angular
+                #Express #MongoDB
+              </div>
+            </div>
+
+            <div class="projects-buttons">
+              <a
+                href="https://github.com/FilipTomash/portfolio-projects-deploy/tree/b71769880f9f8f55b74cb24a4adb54f0c0560c69/localBuzz"
+                target="_blank"
+                class="projects-link"
+              >
+                <i class="ri-github-line"></i> View
+              </a>
+            </div>
+          </article>
+          <article class="projects-card">
+            <div class="projects-image">
+              <img
+                src="assets/Focus-hub.png"
+                alt="focus-hub-image"
+                class="projects-img"
+              />
+
+              <a
+                href="https://additional-focushub.vercel.app/"
+                target="_blank"
+                class="projects-button button"
+              >
+                <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+
+            <div class="projects-content">
+              <h3 class="projects-subtitle">Productivity App</h3>
+              <h2 class="projects-title">Focus Hub</h2>
+              <div class="projects-description">
+              <p>          
+                The purpose of FocusHub, as the name implies, is to concentrate on 
+                identifying the sources and causes of problems—zeroing in on the core issues.
+              </p>
+              <br>
+              
+              <p>
+                <b>Specifications:</b>
+                <br>
+                This app was built using NestJS as the back-end solution and 
+                React.js for a seamless and intuitive front-end user experience.
+              </p>
+              <br>
+              📈 🚀 #React #NestJS #PostgreSQL
+            </div>
+            </div>
+
+            <div class="projects-buttons">
+              <a
+                href="https://github.com/pavich5/FitnessApp"
+                target="_blank"
+                class="projects-link"
+              >
+                <i class="ri-github-line"></i> View
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div id="projects-end"></div>
+      <div id="contact"></div>
+      <!--==================== CONTACT ====================-->
       <section class="contact section" id="contact">
         <div class="contact-container grid">
           <div class="contact-data">
@@ -368,7 +372,7 @@
             </p>
 
             <p class="contact-description-2">
-            I only need your <b>Name</b> and <b>Email Address</b>.
+            I only need your <b>Name</b> and <b>Email.</b>
             </p>
 
             <div class="circle-decoration"></div>
@@ -481,9 +485,20 @@
         </div>
       </section>
     </main>
-        <!-- =================== FOOTER =================== -->
-    <footer class="footer">
-      &copy; All rights reserved | Filip Tomashevski
-    </footer>
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer"> &copy; All rights reserved | Filip Tomashevski</footer>
+    <!--========== SCROLL UP ==========-->
+
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-double-line"></i>
+    </a>
+
+    <!--========== SCROLLREVEAL ==========-->
+    <script src="scrollreveal.min.js"></script>
+
+
+    <!--========== EmailJS ==========-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </body>
 </html>
