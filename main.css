@@ -183,6 +183,10 @@ body.dark-theme {
   color: var(--color-highlight);
 }
 
+.dark-theme .contact-button {
+  opacity: 0.9;
+}
+
 .dark-theme .circle-decoration::after {
   border: 3px solid var(--gray-color);
 }
