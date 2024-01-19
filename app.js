@@ -1,4 +1,4 @@
-// ==================== SHOW MENU ===================//
+// ================== SHOW MENU ================== //
 
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
@@ -16,21 +16,22 @@ if (navClose) {
   });
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
+// ================== LINK CLICK REMOVE MENU ================== //
 
-const navLink = document.querySelectorAll(".nav__link");
+const navLink = document.querySelectorAll(".nav-link");
 
-const linkAction = () => {
+const linkClicked = () => {
   const navMenu = document.getElementById("nav-menu");
   navMenu.classList.remove("show-menu");
 };
 
-navLink.forEach((x) => x.addEventListener("click", linkAction));
+navLink.forEach((link) => link.addEventListener("click", linkClicked));
 
-/*=============== SHADOW HEADER ===============*/
+// ================== SHADOW HEADER ================== //
 
 const shadowHeader = () => {
   const header = document.getElementById("header");
+
   // When the scroll is greater than 50 viewport height , add the class
   this.scrollY >= 50
     ? header.classList.add("shadow-header")
@@ -39,7 +40,7 @@ const shadowHeader = () => {
 
 window.addEventListener("scroll", shadowHeader);
 
-/*=============== EMAIL JS ===============*/
+// ================== EMAILJS ================== //
 
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.getElementById("contact-message");
@@ -48,28 +49,25 @@ const sendEmail = (e) => {
   e.preventDefault();
 
   // serviceId - templateId - #form - publicKey
+
   emailjs
     .sendForm(
-      "service_k6slttt",
-      "template_5g33tfu",
+      "service_q0kje9x",
+      "contact_form",
       "#contact-form",
-      "FBhONwKYbssW30g7c"
+      "_MR7782eHiYnFhRxm"
     )
     .then(
       () => {
-        // Show sent message
-        contactMessage.textContent = "Message sent successfully ✅";
+        contactMessage.textContent = "Message sent successfully ✔️";
 
-        // Remove message after five seconds
         setTimeout(() => {
           contactMessage.textContent = "";
         }, 5000);
 
-        // Clear input fields
         contactForm.reset();
       },
       () => {
-        // Show error message
         contactMessage.textContent = "Message not sent (service error) ❌";
       }
     );
@@ -82,7 +80,7 @@ contactForm.addEventListener("submit", sendEmail);
 const scrollUp = () => {
   const scrollUp = document.getElementById("scroll-up");
 
-  this.scrollY >= 350
+  this.scrollY >= 850
     ? scrollUp.classList.add("show-scroll")
     : scrollUp.classList.remove("show-scroll");
 };
@@ -95,13 +93,12 @@ const sections = document.querySelectorAll("section[id]");
 
 const scrollActive = () => {
   const scrollDown = window.scrollY;
-
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
+      sectionTop = current.offsetTop - 68,
       sectionId = current.getAttribute("id"),
       sectionClass = document.querySelector(
-        ".nav__menu a[href*=" + sectionId + "]"
+        ".nav-menu a[href*=" + sectionId + "]"
       );
 
     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
@@ -117,8 +114,14 @@ window.addEventListener("scroll", scrollActive);
 /*=============== DARK LIGHT THEME ===============*/
 
 const themeButton = document.getElementById("theme-button");
+const aboutImg = document.querySelector(".about-img");
+const colorSplash = document.querySelector(".color-splash");
 const darkTheme = "dark-theme";
 const iconTheme = "ri-sun-line";
+const lightImg = "assets/light-portfolio-img.jpg";
+const darkImg = "assets/dark-portfolio-img.jpg";
+const lightSplash = "assets/color-splash-light.png";
+const darkSplash = "assets/color-splash-dark.png";
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
@@ -126,18 +129,24 @@ const selectedIcon = localStorage.getItem("selected-icon");
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
+const getCurrentTheme = () => {
+  return document.body.classList.contains(darkTheme) ? "dark" : "light";
+};
 
-// We validate if the user previously chose a topic
+const getCurrentIcon = () => {
+  return themeButton.classList.contains(iconTheme)
+    ? "ri-moon-line"
+    : "ri-sun-line";
+};
+
+// We validate if the user previously chose a theme
 
 if (selectedTheme) {
   // If the validation is fulfilled , we ask what the issue was to know if we activated or deactivated the dark theme
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
     darkTheme
   );
+
   themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
     iconTheme
   );
@@ -145,32 +154,44 @@ if (selectedTheme) {
 
 // Activate / deactivate the theme manually with the button
 
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
+const toggleTheme = () => {
+  // Add or remove dark theme & icon
 
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
+
+  // Swiching between light & dark img and color splash
+
+  aboutImg.src = document.body.classList.contains(darkTheme)
+    ? darkImg
+    : lightImg;
+  colorSplash.src = document.body.classList.contains(darkTheme)
+    ? darkSplash
+    : lightSplash;
 
   // We save the theme and the current icon that the user chose
 
   localStorage.setItem("selected-item", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
-});
+};
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
+themeButton.addEventListener("click", toggleTheme);
+
+// /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
-  duration: 2500,
-  delay: 400,
+  duration: 2000,
+  delay: 200,
 });
 
-sr.reveal(`.home__perfil, .about__image, .contact__mail`, { origin: "right" });
+sr.reveal(`.about-image, .contact-mail`, { origin: "right" });
 sr.reveal(
-  `.home__name, .home__info, 
-           .about__container .section__title-1, .about__info,
-           .contact__social, .contact__data`,
+  `.home-name, .home-title, 
+             .about-title, .section-title-1, .about-body,
+             .contact-social, .contact-data`,
   { origin: "left" }
 );
-sr.reveal(`.services__card, .projects__card`, { interval: 100 });
+sr.reveal(`.skills-card, .projects-card`, { interval: 100 });
+sr.reveal(` .section-title-2`);
