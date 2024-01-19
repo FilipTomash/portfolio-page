@@ -182,8 +182,8 @@ themeButton.addEventListener("click", toggleTheme);
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
-  duration: 2000,
-  delay: 200,
+  duration: 500,
+  // delay: 100,
 });
 
 sr.reveal(`.about-image, .contact-mail`, { origin: "right" });
@@ -193,5 +193,5 @@ sr.reveal(
              .contact-social, .contact-data`,
   { origin: "left" }
 );
-sr.reveal(`.skills-card, .projects-card`, { interval: 100 });
+sr.reveal(`.skills-card, .projects-card`, { interval: 50 });
 sr.reveal(` .section-title-2`);
