@@ -182,8 +182,8 @@ themeButton.addEventListener("click", toggleTheme);
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
-  duration: 500,
-  // delay: 100,
+  duration: 1000,
+  delay: 100,
 });
 
 sr.reveal(`.about-image, .contact-mail`, { origin: "right" });
