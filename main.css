@@ -666,7 +666,7 @@ small {
 }
 
 .skills-list {
-  width: fit-content;
+  width: 100%;
   padding-top: 1rem;
   display: flex;
   flex-direction: row;
@@ -1283,6 +1283,10 @@ div {
     height: 620px;
   }
 
+  .home-heading {
+    text-align: center;
+  }
+
   .home-scroll-text {
     display: block;
     color: var(--text-color);
@@ -1318,8 +1322,10 @@ div {
     top: 5px;
     right: -8px;
     border-radius: 3px;
-    opacity: 0.6;
+    opacity: 0.8;
+    z-index: -1;
   }
+
   .about-body {
     flex-direction: column;
     align-items: center;
@@ -1461,6 +1467,20 @@ div {
   .contact-social-arrow {
     display: none;
   }
+
+  .scrollup {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  .scrollup:hover {
+    opacity: 1;
+  }
+
+  .show-scroll {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
 }
 
 /* For medium devices */
@@ -1503,8 +1523,10 @@ div {
     top: 5px;
     right: -8px;
     border-radius: 3px;
-    opacity: 0.6;
+    opacity: 0.8;
+    z-index: -1;
   }
+
   .about-body {
     flex-direction: column;
     align-items: center;
