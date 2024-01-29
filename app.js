@@ -117,7 +117,7 @@ const themeButton = document.getElementById("theme-button");
 const aboutImg = document.querySelector(".about-img");
 const colorSplash = document.querySelector(".color-splash");
 const darkTheme = "dark-theme";
-const iconTheme = "ri-sun-line";
+const iconTheme = "ri-sun-fill";
 const lightImg = "assets/light-portfolio-img.jpg";
 const darkImg = "assets/dark-portfolio-img.jpg";
 const lightSplash = "assets/color-splash-light.png";
@@ -135,8 +135,8 @@ const getCurrentTheme = () => {
 
 const getCurrentIcon = () => {
   return themeButton.classList.contains(iconTheme)
-    ? "ri-moon-line"
-    : "ri-sun-line";
+    ? "ri-moon-fill"
+    : "ri-sun-fill";
 };
 
 // We validate if the user previously chose a theme
@@ -147,7 +147,7 @@ if (selectedTheme) {
     darkTheme
   );
 
-  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
+  themeButton.classList[selectedIcon === "ri-moon-fill" ? "add" : "remove"](
     iconTheme
   );
 }
