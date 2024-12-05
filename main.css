@@ -434,6 +434,21 @@ small {
 }
 .home-title {
   font-size: calc(var(--biggest-font-size) - 0.5rem);
+  width: 100%;
+}
+
+.title-one {
+  width: 100%;
+  display: block;
+  text-align: start;
+  margin: 8px 0 5px 60px;
+}
+
+.title-two {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-left: 30px;
 }
 
 .home-scroll {
@@ -1509,6 +1524,21 @@ div {
   }
   .home-title {
     font-size: calc(var(--biggest-font-size) - 0.4rem);
+    width: 100%;
+  }
+
+  .title-one {
+    width: 100%;
+    display: block;
+    text-align: start;
+    margin: 10px 0 5px 50px;
+  }
+
+  .title-two {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-left: 30px;
   }
 
   .about-heading {
@@ -1781,9 +1811,22 @@ div {
   }
   .home-title {
     max-width: 600px;
-    text-align: start;
+    width: 100%;
   }
 
+  .title-one {
+    width: 100%;
+    display: block;
+    text-align: start;
+    margin: 10px 0 5px 100px;
+  }
+
+  .title-two {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-left: 40px;
+  }
   .home-scroll {
     position: absolute;
     right: 9rem;
